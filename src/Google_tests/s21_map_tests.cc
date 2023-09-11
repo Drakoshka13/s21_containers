@@ -345,8 +345,9 @@ TEST(MapTest, MaxSize) {
   EXPECT_TRUE(a1.max_size() < b1.max_size());
 }
 
-TEST(MapTest, s1234124312412) {
+TEST(MapTest, Move) {
   std::map<int, int> a = {{9, 9}, {10, 10}, {123, 123}, {-4, -4}};
   std::map<int, int> b = {{9, 9}, {10, 10}, {123, 123}, {-4, -4}};
   a = std::move(a);
+  b = std::move(b);
 }

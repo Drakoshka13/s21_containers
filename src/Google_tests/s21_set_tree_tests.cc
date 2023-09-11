@@ -1,6 +1,5 @@
 #include <iostream>
 #include <set>
-#include <stack>
 
 #include "../s21_binary_tree.h"
 #include "../s21_set.h"

@@ -3,8 +3,6 @@
 
 #include <cmath>
 #include <functional>
-#include <iostream>
-#include <memory>
 
 #include "s21_binary_tree.h"
 

@@ -50,22 +50,14 @@ class stack {
   // move constructor
   stack(stack &&s) noexcept : stack() {
     swap(s);
-    s.~stack();
+    s.clear();
   }
   // destructor
-  ~stack() {
-    stackSize = 0U;
-    node *current = head;
-    while (current) {
-      node *next = current->next;
-      delete current;
-      current = next;
-    }
-  }
+  ~stack() { this->clear(); }
   // assignment operator overload for moving object
   stack &operator=(stack &&s) {
     swap(s);
-    s.~stack();
+    s.clear();
     return *this;
   }
 
@@ -122,6 +114,15 @@ class stack {
   node *head;
   node *tail;
   size_type stackSize;
+  void clear() {
+    stackSize = 0U;
+    node *current = head;
+    while (current) {
+      node *next = current->next;
+      delete current;
+      current = next;
+    }
+  }
 };
 }  // namespace s21
 

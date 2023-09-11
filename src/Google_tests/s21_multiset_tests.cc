@@ -1,6 +1,5 @@
 #include <iostream>
 #include <set>
-#include <stack>
 
 #include "../s21_multiset.h"
 #include "gtest/gtest.h"

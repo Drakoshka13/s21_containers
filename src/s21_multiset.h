@@ -3,10 +3,6 @@
 
 #include <cmath>
 #include <functional>
-#include <iostream>
-#include <memory>
-#include <stack>
-#include <vector>
 
 #include "s21_stack.h"
 #include "s21_vector.h"
