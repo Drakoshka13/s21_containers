@@ -311,6 +311,25 @@ class list {
     }
   }
 
+  // void unique() {
+  //   if (size_ > 1) {
+  //     Node* current = head_;
+  //     while (current->next != nullptr) {
+  //       if (current->value == current->next->value) {
+  //         Node* duplicate = current->next;
+  //         current->next = duplicate->next;
+  //         if (duplicate->next != nullptr) {
+  //           duplicate->next->prev = current;
+  //         }
+  //         delete duplicate;
+  //         --size_;
+  //       } else {
+  //         current = current->next;
+  //       }
+  //     }
+  //   }
+  // }
+
   void sort() {
     if (size_ > 1) {
       auto it = ++begin();
