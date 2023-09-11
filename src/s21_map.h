@@ -86,10 +86,12 @@ class map : public BinaryTree<std::pair<const Key, T>,
   }
 
   map &operator=(map &&s) noexcept {
-    this->root_ = s.root_;
-    s.root_ = nullptr;
-    this->size_ = s.size_;
-    this->allocator_ = s.allocator_;
+    if (this != &s) {
+      this->root_ = s.root_;
+      s.root_ = nullptr;
+      this->size_ = s.size_;
+      this->allocator_ = s.allocator_;
+    }
     return *this;
   }
 
