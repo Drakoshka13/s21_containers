@@ -4,15 +4,6 @@
 #include "../s21_map.h"
 #include "gtest/gtest.h"
 
-namespace s21Map {
-namespace tests {
-namespace {
-
-// The fixture for testing class Foo.
-class s21MapTests : public ::testing::Test {
- protected:
-};
-
 template <typename key_type, typename value_type>
 bool compare_map(s21::map<key_type, value_type> my_map,
                  std::map<key_type, value_type> std_map) {
@@ -359,7 +350,3 @@ TEST(MapTest, s1234124312412) {
   std::map<int, int> b = {{9, 9}, {10, 10}, {123, 123}, {-4, -4}};
   a = std::move(a);
 }
-
-}  // namespace
-}  // namespace tests
-}  // namespace s21Map

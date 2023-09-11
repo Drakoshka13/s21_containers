@@ -223,7 +223,7 @@ class multiset {
       other.clear();
     }
   }
-  
+
   void swap(multiset &other) {
     std::swap(root_, other.root_);
     std::swap(size_, other.size_);

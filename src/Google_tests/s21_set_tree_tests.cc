@@ -6,14 +6,6 @@
 #include "../s21_set.h"
 #include "gtest/gtest.h"
 
-namespace s21binaryTree {
-namespace tests {
-namespace {
-
-class s21BinaryTreeTests : public ::testing::Test {
- protected:
-};
-
 template <typename key_type>
 bool compare_set(s21::set<key_type> my_set, std::set<key_type> std_set) {
   bool res = true;
@@ -575,7 +567,3 @@ TEST(SetTest, MaxSize) {
 
   EXPECT_TRUE(a1.max_size() > b1.max_size());
 }
-
-}  // namespace
-}  // namespace tests
-}  // namespace s21binaryTree

@@ -222,7 +222,7 @@ class BinaryTree {
       other.clear();
     }
   }
-  
+
   void swap(BinaryTree &other) {
     std::swap(root_, other.root_);
     std::swap(size_, other.size_);

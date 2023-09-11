@@ -3,15 +3,6 @@
 #include "../s21_stack.h"
 #include "gtest/gtest.h"
 
-namespace s21Stack {
-namespace tests {
-namespace {
-
-// The fixture for testing class Foo.
-class s21StackTests : public ::testing::Test {
- protected:
-};
-
 TEST(StackTest, stack) {
   s21::stack<int> n = {1, 2, 3, 4};
   s21::stack<int> k(n);
@@ -52,7 +43,3 @@ TEST(StackTest, stackPushPop) {
     m.pop();
   }
 }
-
-}  // namespace
-}  // namespace tests
-}  // namespace s21Stack
