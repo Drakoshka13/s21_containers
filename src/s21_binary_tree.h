@@ -172,6 +172,7 @@ class BinaryTree {
     }
     return *this;
   };
+
   BinaryTree &operator=(const BinaryTree &other) {
     if (this == &other) {
       return *this;
@@ -221,6 +222,7 @@ class BinaryTree {
       other.clear();
     }
   }
+  
   void swap(BinaryTree &other) {
     std::swap(root_, other.root_);
     std::swap(size_, other.size_);

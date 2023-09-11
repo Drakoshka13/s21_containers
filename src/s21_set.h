@@ -26,6 +26,7 @@ class set : public BinaryTree<Key> {
   set(const set &s) : BinaryTree<key_type>::BinaryTree(s) {}
   set(set &&s) { *this = std::move(s); }
   ~set() {}
+  
   set &operator=(const set &other) {
     if (this == &other) {
       return *this;
@@ -34,6 +35,7 @@ class set : public BinaryTree<Key> {
     this->CopyTree(other.root_);
     return *this;
   }
+
   set &operator=(set &&s) noexcept {
     this->root_ = s.root_;
     s.root_ = nullptr;

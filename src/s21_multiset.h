@@ -58,9 +58,11 @@ class multiset {
     bool operator==(const iterator &other) const {
       return (other.current_node_ == current_node_);
     }
+
     bool operator!=(const iterator &other) const {
       return !(current_node_ == other.current_node_);
     }
+
     iterator &operator++() {
       if (current_node_->right != nullptr) {
         Node *temp = current_node_->right;
@@ -171,6 +173,7 @@ class multiset {
     }
     return *this;
   };
+
   multiset &operator=(const multiset &other) {
     if (this == &other) {
       return *this;
@@ -220,6 +223,7 @@ class multiset {
       other.clear();
     }
   }
+  
   void swap(multiset &other) {
     std::swap(root_, other.root_);
     std::swap(size_, other.size_);
