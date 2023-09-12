@@ -158,7 +158,16 @@ class BinaryTree {
   BinaryTree(BinaryTree &&s) noexcept { *this = std::move(s); }
   ~BinaryTree() { clear(); }
 
-  BinaryTree operator=(BinaryTree &&s) {
+  BinaryTree &operator=(const BinaryTree &other) {
+    if (this == &other) {
+      return *this;
+    }
+    this->clear();
+    this->CopyTree(other.root_);
+    return *this;
+  }
+
+  BinaryTree operator=(BinaryTree &&s) noexcept {
     if (this != &s) {
       clear();
       root_ = s.root_;
@@ -168,15 +177,6 @@ class BinaryTree {
     }
     return *this;
   };
-
-  BinaryTree &operator=(const BinaryTree &other) {
-    if (this == &other) {
-      return *this;
-    }
-    this->clear();
-    this->CopyTree(other.root_);
-    return *this;
-  }
 
   void clear() {
     DestroyTree(root_);
@@ -203,7 +203,7 @@ class BinaryTree {
 
   void erase(iterator pos) { erase(pos.current_node_, root_); }
 
-  void merge(BinaryTree &other) {
+  void merge(BinaryTree &other) noexcept {
     if (other.root_ == nullptr) {
       return;
     }
@@ -219,7 +219,7 @@ class BinaryTree {
     }
   }
 
-  void swap(BinaryTree &other) {
+  void swap(BinaryTree &other) noexcept {
     std::swap(root_, other.root_);
     std::swap(size_, other.size_);
     std::swap(allocator_, other.allocator_);
