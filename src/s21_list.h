@@ -2,7 +2,6 @@
 #define CONTAINERS_SRC_S21_LIST_H_
 
 #include <cmath>
-#include <iostream>
 #include <limits>
 #include <memory>
 
@@ -123,14 +122,14 @@ class list {
   reference back() { return tail_->value; }
 
   // list Iterators
-  iterator begin() {
+  iterator begin() noexcept {
     return iterator(head_);
   }  // returns an iterator to the beginning
-  iterator end() {
+  iterator end() noexcept {
     return iterator(nullptr);
   }  //  returns an iterator to the end
 
-  iterator last() {
+  iterator last() noexcept {
     if (begin() == end()) return end();
     auto it = begin();
     ++it;
@@ -143,11 +142,15 @@ class list {
   }
 
   // list Capacity
-  bool empty() const {
+  bool empty() const noexcept {
     return head_ == nullptr;
   }  // checks whether the container is empty
-  size_type size() const { return size_; }  //  returns the number of elements
-  size_type max_size() const {
+
+  size_type size() const noexcept {
+    return size_;
+  }  //  returns the number of elements
+
+  size_type max_size() const noexcept {
     return std::numeric_limits<size_type>::max() / sizeof(Node) / 2;
   }  //  returns the maximum possible number of elements
 
@@ -247,7 +250,6 @@ class list {
     if ((this != &other) && (!(other.empty()))) {
       if (empty()) {
         copy(other);
-
       } else {
         iterator itThis = begin();
         iterator itOther = other.begin();
@@ -346,6 +348,14 @@ class list {
 
   list& operator=(const list& l) {
     copy(l);
+    return *this;
+  }
+
+  list& operator=(list&& l) {
+    if (this != &l) {
+      clear();
+      swap(l);
+    }
     return *this;
   }
 

@@ -6,7 +6,6 @@
 
 namespace s21Multiset {
 namespace tests {
-namespace {
 
 class s21MultisetTests : public ::testing::Test {
  protected:
@@ -519,6 +518,5 @@ TEST(MultisetTests, EqualRange) {
   EXPECT_EQ(*a.equal_range(5).first, *b.equal_range(5).first);
 }
 
-}  // namespace
 }  // namespace tests
 }  // namespace s21Multiset

@@ -4,8 +4,6 @@
 
 #include <list>
 
-namespace {
-
 TEST(List, DefaultConstructor) {
   s21::list<int> s21_list;
   std::list<int> std_list;
@@ -513,7 +511,6 @@ TEST(list, insert_many_front_function) {
     EXPECT_EQ(*std_it, *s21_it);
   }
 }
-}  // namespace
 
 int main(int argc, char **argv) {
   ::testing::InitGoogleTest(&argc, argv);

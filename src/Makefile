@@ -36,7 +36,7 @@ leaks: test
 
 clang: 
 	cp ../materials/linters/.clang-format ./
-	clang-format -style=Google -n *.h $(TEST_PATH)
+	clang-format -style=Google -n  *.h $(TEST_PATH)
 	rm .clang-format
 
 clean:
